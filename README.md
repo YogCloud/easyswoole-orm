@@ -19,7 +19,7 @@ Easyswoole-ORM
 ## 安装
 
 ```
-composer require easyswoole/orm
+composer require yogcloud/easyswoole-orm
 ```
 
 ## RFC
