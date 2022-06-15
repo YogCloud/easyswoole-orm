@@ -376,6 +376,7 @@ class BaseCollection implements ArrayAccess, Countable, IteratorAggregate, JsonS
      * @param  mixed $offset 键名
      * @return bool
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return array_key_exists($offset, $this->items);
@@ -387,6 +388,7 @@ class BaseCollection implements ArrayAccess, Countable, IteratorAggregate, JsonS
      * @param  mixed $offset 键名
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->items[$offset];
@@ -399,6 +401,7 @@ class BaseCollection implements ArrayAccess, Countable, IteratorAggregate, JsonS
      * @param  mixed $value  值
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -414,6 +417,7 @@ class BaseCollection implements ArrayAccess, Countable, IteratorAggregate, JsonS
      * @param  mixed $offset 键名
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->items[$offset]);
@@ -424,6 +428,7 @@ class BaseCollection implements ArrayAccess, Countable, IteratorAggregate, JsonS
      * @access public
      * @return int
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return count($this->items);
@@ -434,6 +439,7 @@ class BaseCollection implements ArrayAccess, Countable, IteratorAggregate, JsonS
      * @access public
      * @return ArrayIterator
      */
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         return new ArrayIterator($this->items);
@@ -444,6 +450,7 @@ class BaseCollection implements ArrayAccess, Countable, IteratorAggregate, JsonS
      * @access public
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return $this->toArray();
@@ -455,6 +462,7 @@ class BaseCollection implements ArrayAccess, Countable, IteratorAggregate, JsonS
      * @param  integer $options json 参数
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function toJson($options = JSON_UNESCAPED_UNICODE)
     {
         return json_encode($this->toArray(), $options);
@@ -465,6 +473,7 @@ class BaseCollection implements ArrayAccess, Countable, IteratorAggregate, JsonS
      * @access public
      * @return string
      */
+    #[\ReturnTypeWillChange]
     public function __toString()
     {
         return $this->toJson();

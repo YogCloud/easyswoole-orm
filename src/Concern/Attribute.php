@@ -94,11 +94,13 @@ trait Attribute
      * @param mixed $offset
      * @return bool
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         return $this->__isset($offset);
     }
 
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->getAttr($offset);
@@ -110,6 +112,7 @@ trait Attribute
      * @return bool
      * @throws Exception
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         return $this->setAttr($offset, $value);
@@ -121,6 +124,7 @@ trait Attribute
      * @return bool
      * @throws Exception
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         return $this->setAttr($offset, null);
@@ -130,6 +134,7 @@ trait Attribute
      * json序列化方法
      * @return array|mixed
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return $this->toArray(false, false);
